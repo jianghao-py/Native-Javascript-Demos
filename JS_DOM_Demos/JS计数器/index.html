@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #DAF9E6;
+        }
+
+        .countainer{
+            width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           
+        }
+        .countainer .items{
+            width: 100%;
+            height: 500px;
+            background: #B4D49D;
+            border-radius: 10px;
+            
+        }
+
+        .countainer .items h1{
+            margin-top: 170px;
+            font-size: 40px;
+        }
+
+        .countainer .items span{
+            font-size: 30px;
+            display: inline-block;
+            margin-top: 30px;
+        }   
+
+        .countainer .items .btn-container{
+            margin-top: 30px;
+        }     
+        
+        .countainer .items .btn-container button{
+            margin-left: 30px;
+            width: 100px;
+            height: 50px;
+            font-size: 18px;
+            background: #B4D49D;
+            border: none;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <div class="countainer">
+        <div class="items">
+            <h1>
+                计数器
+            </h1>
+            <span id="value">0</span>
+            <div class="btn-container">
+                <button id="minus">Decrease</button>
+                <button id="reset">Reset</button>
+                <button id="add">Increase</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var number = document.querySelector("#value");
+        var minus = document.querySelector("#minus");
+        var add = document.querySelector("#add");
+        var reset = document.querySelector("#reset");
+
+        let num = 0;
+        var timer;
+        add.addEventListener("click",function(){
+            add.style.backgroundColor = "#BF4F45";
+            add.style.color = "#fff";
+            timer = setInterval(function(){
+                num ++;
+                number.innerHTML = num;
+            },1000);
+
+            this.disabled = true;
+            minus.disabled = true;
+            
+        });
+
+        reset.addEventListener("click",function(){
+            num = 0;
+            clearInterval(timer);
+            add.disabled = false;
+            add.style.backgroundColor = "#B4D49D";
+            add.style.color = "#333";
+            number.innerHTML = num;
+
+            minus.disabled = false;
+            minus.style.backgroundColor = "#B4D49D";
+            minus.style.color = "#333";
+            
+        });
+
+        minus.addEventListener("click",function(){
+            minus.style.backgroundColor = "#BF4F45";
+            minus.style.color = "#fff";
+            timer = setInterval(function(){
+                num --;
+                number.innerHTML = num;
+            },1000);
+
+            this.disabled = true;
+            add.disabled = true;
+        });
+    </script>
+</body>
+</html>

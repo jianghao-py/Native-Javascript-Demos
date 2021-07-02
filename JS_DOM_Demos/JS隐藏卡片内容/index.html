@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.3-web/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(225, 245, 155);
+        }
+        .container{
+            width: 500px;
+            background: #fff;
+            margin: 0 auto;
+            margin-top: 200px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .text{
+            display: none;
+            text-align: left;
+            padding: 0 10px;
+            padding-bottom: 10px;
+        }
+
+        .title{
+            position: relative;
+        }
+
+        .title p{
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .title .open{
+            position: absolute;
+            right: 40px;
+            top:15px;
+            
+        }
+
+        .title .close{
+            position: absolute;
+            right: 40px;
+            top:15px;
+            display: none;
+        }
+
+        .title .open i{
+            font-size: 25px;
+            color:rgb(228, 193, 106);
+            
+        }
+
+        .title .close i{
+            font-size: 25px;
+            color:rgb(228, 193, 106);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section class="container">
+            <div class="title">
+                <p>打开这个卡片</p>
+                    <span class="open">
+                        <i class="far fa-plus-square"></i>
+                    </span>
+                    <span class="close">
+                        <i class="far fa-minus-square"></i>
+                    </span>  
+            </div>
+
+            <div class="text">
+                <p>
+                    电子计算机（亦称电脑）是利用数字电子技术，根据一系列指令指示并且自动执行任意算术或逻辑操作串行的设备。通用计算机因有能遵循被称为“程序”的一般操作集的能力而使得它们能够执行极其广泛的任务。
+
+                    计算机被用作各种工业和消费设备的控制系统。这包括简单的特定用途设备（如微波炉和遥控器）、工业设备（如工业机器人和计算机辅助设计），及通用设备（如个人电脑和智能手机之类的移动设备）等。尽管计算机种类繁多，但根据图灵机理论，一部具有着基本功能的计算机，应当能够完成任何其它计算机能做的事情。因此，理论上从智能手机到超级计算机都应该可以完成同样的作业（不考虑时间和存储因素）。由于科技的飞速进步，下一代计算机总是在性能上能够显著地超过其前一代，这一现象有时被称作“摩尔定律”。通过互联网，计算机互相连接，极大地提高了信息交换速度，反过来推动了科技的发展。在21世纪的现在，计算机的应用已经涉及到方方面面，各行各业了。 
+                </p>
+            </div>
+    </section>
+
+    <script>
+        var open = document.querySelector(".open");
+        var close = document.querySelector(".close");
+        var text = document.querySelector(".text");
+        
+
+        open.addEventListener("click",function(){
+            open.style.display = "none";
+            close.style.display = "block";
+            text.style.display = "block";
+        });
+
+        close.addEventListener("click",function(){
+            open.style.display = "block";
+            close.style.display = "none";
+            text.style.display = "none";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../fontawesome-free-5.15.3-web/css/all.min.css">
+    <style>
+       .container{
+           margin: 0 auto;
+           width: 500px;
+           margin-top: 200px;
+           text-align: center;
+       } 
+
+       .container .small{
+           display: block;
+           width: 500px;
+           height: 300px;
+           border-radius: 10px;
+       }
+
+       .box{
+          
+           margin: 0 auto;
+           width: 1000px;
+           height: 600px;
+           background: #184042;
+           position: absolute;
+           left: 20%;
+           top:20%;
+           text-align: center;
+           border-radius: 10px;
+           display: none;
+       }
+
+       .box h1{
+           display: block;
+           margin-top: 30px;
+           color: #fff;
+       }
+
+       .box .large{
+            width:750px;
+            height: 450px;
+            /* margin-top: 60px; */
+            border-radius: 10px;
+            
+       }
+
+       .box .close{
+           position: absolute;
+           right: 30px;
+           top: 30px;
+
+       }
+
+       .box .close i{
+           font-size: 30px;
+           color: #fff;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./1.jpeg" alt="" class="small">
+        <h1>点击图片放大</h1>
+    </div>
+
+    <div class="box">
+        <h1>尝试拖拽盒子</h1>
+        <img src="./1.jpeg" alt="" class="large">
+        <span class="close"><i class="far fa-window-close"></i></span>
+    </div>
+
+    <script>
+        var small = document.querySelector(".container");
+        var open = document.querySelector(".small");
+        var close = document.querySelector(".close");
+        var box = document.querySelector(".box");
+        open.addEventListener("click",function(){
+            box.style.display = "block";
+            small.style.display = "none";
+
+        });
+
+        close.addEventListener("click",function(){
+            box.style.display = "none";
+            small.style.display = "block";
+        });
+
+        // 鼠标按下
+        box.addEventListener('mousedown',function(e){
+            var x = e.pageX - box.offsetLeft;
+            var y = e.pageY - box.offsetTop;
+            
+
+
+            //鼠标移动
+            document.addEventListener('mousemove',move);
+               
+            function move(e){
+               
+                var newX = e.pageX - x;
+                var newY = e.pageY - y;
+
+                box.style.left = newX + 'px';
+                box.style.top = newY + 'px';
+            }
+
+            //鼠标抬起，移除鼠标移动
+            document.addEventListener('mouseup',function(){
+                document.removeEventListener('mousemove',move);
+                
+            });
+            
+        });
+    </script>
+</body>
+</html>

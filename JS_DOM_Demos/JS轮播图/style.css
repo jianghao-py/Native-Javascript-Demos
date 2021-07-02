@@ -1,0 +1,105 @@
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.center{
+    width: 1500px;
+    height: 540px;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.center .img-box{
+    position: absolute;
+    width: 12000px;
+    height: 540px;
+    
+}
+
+.center .img-box li{
+    width: 1500px;
+    height: 540px;
+    float: left;
+    list-style: none;
+}
+
+.center .img-box li img{
+    width: 1500px;
+}
+
+
+
+.center span.left{
+    display: block;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #fff;
+    background: rgb(243, 192, 97);
+    border-radius: 30px;
+
+}
+
+.center span.left i{
+    font-size: 40px;
+    
+}
+
+
+.center span.right{
+    display: block;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: #fff;
+    background: rgb(243, 192, 97);
+    border-radius: 30px;
+
+}
+
+.center span.right i{
+    font-size: 40px;
+    
+}
+
+
+.circle{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -120px;
+    list-style: none;
+    
+}
+
+.circle li{
+    float: left;
+    margin: 0 10px;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+
+
+
+.circle span i{
+    font-size: 20px;
+    color: #fff;
+}
+
+.circle .current{
+    background: #fff;
+}
+

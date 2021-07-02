@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+           
+        }
+
+        body{
+            background:rgb(113, 115, 117);
+            opacity: 0.9;
+        }
+      
+        .container{
+            width: 1500px;
+            margin: 0 auto;
+            margin-top: 200px;
+
+        }
+
+        .container .img-container{
+            float: left;
+            width: 900x;
+            height: 500px;
+        }
+
+        .container .img-container img{
+            width: 900px;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .container .text{
+            float: right;
+            margin-top: 100px;
+            text-align: center;
+            margin-right: 50px;
+        }
+
+        .container .text h1{
+            color: #fff;
+        }
+
+        .container .text div{
+            margin-top: 50px;
+            width: 110px;
+            height: 120px;
+            background: hsl(209, 61%, 16%);
+            float: left;
+            margin-left: 15px;
+            border-radius: 10px;
+            font: 32px "Roboto";
+            text-align: center;
+            
+            color: #fff;
+        }
+
+        .container .text div span:first-of-type{
+            display: block;
+            margin-top: 20px;
+        }
+
+        .container .text div span:last-of-type{
+            display: block;
+            margin-top: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+   
+        <div class="container clearfix">
+            <div class="img-container">
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="text clearfix">
+                <h1>距离2077年还有</h1>
+                <div class="day">
+                 <span class="one">00</span>
+                 <span>天</span>
+                </div>
+                <div class="hour">
+                    <span class="one">00</span>
+                    <span>时</span>
+                </div>
+                <div class="minute">
+                    <span class="one">00</span>
+                    <span>分</span>
+                </div>
+                <div class="sec">
+                    <span class="one">00</span>
+                    <span>秒</span>
+                </div>
+            </div>
+         
+        </div>
+
+        <script>
+            var dayText = document.querySelector(".day .one");
+            var hourText = document.querySelector(".hour .one");
+            var minuteText = document.querySelector(".minute .one");
+            var secText = document.querySelector(".sec .one");
+
+            setInterval(setTimer,1000);
+            function setTimer(){
+                var current = new Date().getTime();
+                var end = new Date('2077/6/20 23:41').getTime();
+
+                var time = end - current;
+
+                var day = parseInt(time/(60*60*24*1000));
+                var hour = parseInt(time/(60*60*1000)%24);
+                var minute = parseInt(time/(60*1000)%60);
+                var sec = parseInt(time/1000%60);
+
+                dayText.innerHTML = day;
+                hourText.innerHTML = hour;
+                minuteText.innerHTML = minute;
+                secText.innerHTML = sec;
+
+                
+
+            }
+
+            
+        </script>
+    
+</body>
+</html>
