@@ -1,0 +1,645 @@
+/* 全局 */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd{
+    margin: 0;
+}
+
+body{
+   font-size: 14px;
+   color:#333;
+   font-family: "微软雅黑"; 
+}
+
+ul,ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    border: none;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    color:#333;    
+}
+
+a:hover{
+    color:#b4a078;
+}
+
+input{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+
+label{
+    vertical-align: middle;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 0;
+}
+
+.center{
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float:right
+}
+
+.clearfix:after,
+.clearfix:before{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+.scaleImg img{
+    transition: 1s linear;
+    transform: scale(1);
+}
+
+.scaleImg:hover img{
+    transform: scale(1.1);
+}
+
+.original{
+    background:#f4f4f4 url("./images/original.png")center no-repeat;
+}
+
+/* 头部 */
+#head{
+    border-bottom: 1px solid #f3f3f3;
+    box-shadow: 0 2px 2px #f3f3f3;
+}
+
+#head .head{
+    background: #333;
+    font-size: 12px; 
+    line-height: 36px; 
+}
+
+#head .head li{
+    float: left;
+    position: relative;
+}
+
+#head .head li a{
+    color: #ccc;
+    padding: 0 12px;
+    border-right: 1px solid #5c5c5c;
+    
+}
+
+#head .head li a i{
+    margin-left: 10px;
+}
+
+#head .head li a.no-border{
+    border-right: none;
+    
+}
+
+#head .head li a:hover{
+    color: #fff;
+}
+
+/* 客户服务 */
+#head .customer ul{
+    display: none;
+    position: absolute;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+#head .customer:hover ul{
+    display: block;
+}
+
+/* 顶部倒三角 */
+#head .customer ul:before
+,#head .down div:before{
+    width: 10px;
+    height: 6px;
+    content: '';
+    display: block;
+    background: url("../images/ico_02.png");
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -6px; 
+}
+
+#head .customer ul li{
+    float:none;
+}
+
+#head .customer ul a{
+    text-align: center;
+    margin: 0 10px;
+    color:#999;
+    display: block;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#head .customer ul a.no-border{
+    border-bottom: none;
+}
+
+#head .customer ul a:hover{
+    color:#b4a078;
+}
+
+#head .customer li.phone i{
+    position: absolute;
+    top:13px;
+    left: 60px;
+    color: #b4a078;
+}
+
+/* 弹出电话 */
+#head .customer li.phone div{
+    display: none;
+    position: absolute;
+    width: 110px;
+    height: 57px;
+    right: -112px;
+    top:0;
+    line-height: 20px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    z-index: 2;
+
+}
+
+#head .customer li.phone:hover div{
+    display: block;
+}
+
+#head .customer li.phone div p:nth-child(1){
+    font-size: 14px;
+    color: #999;
+    margin-top: 11px;
+}
+
+
+#head .customer li.phone div p:nth-child(2){
+    color: #333;
+}
+
+
+#head .down .QR{
+    background: #fff;
+    display: none;
+    position: absolute;
+    border:1px solid #ddd;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    left: -40px;
+    line-height: 0px;
+    z-index: 2;
+    
+}
+
+#head .down .QR span{
+    display: block;
+    color:#b4a078;
+    padding: 20px 0;
+    
+}
+
+#head .down:hover .QR{
+    display: block;
+
+}
+
+/* logo，搜索栏和购物车 */
+.search{
+    margin: 40px 0;
+}
+
+.search .center{
+    position: relative;
+    height: 60px;
+}
+
+
+.search-box{
+    width: 400px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    right: 10%;
+    font-size: 0;
+}
+
+.search-box input{
+    width: 75%;
+    height: 33px;
+    line-height: 33px;
+    border: none;
+    color:#b4a078;
+    outline: none;
+    font-size: 13px;
+    vertical-align: bottom;
+    border: 1px solid #b4a078;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.search-box button{
+    width: 20%;
+    height: 35px;
+    border: none;
+    border: 1px solid #b4a078;
+    color:#fff;
+    background: darkgoldenrod;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+/* 导航栏 */
+.nav{
+    position: relative;
+    background: #fff;
+}
+
+.nav .center{
+    position: relative;
+}
+
+.nav .logo,
+.nav .login{
+    display: none;
+}
+
+.nav-bar{
+    font-size: 0;
+    text-align: center;
+}
+
+.nav-bar li,.sub-nav li{
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 30px;
+    height: 50px;
+    
+}
+
+.nav-bar .separate{
+    padding: 0;
+    color: #ccc;
+}
+
+.nav-bar li a{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.nav-bar li a:hover{
+    border-bottom: 3px solid #b4a078;
+}
+
+/* 购物车父级 */
+.cart-wrap{
+    position: absolute;
+    top: -77px;
+    right: 80px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/ico_04.gif);
+}
+
+.cart-wrap i{
+    font: 12px/20px "微软雅黑";
+    position: absolute;
+    color: #fff;
+    background: #d4282d;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+}
+
+/* 购物车下拉框 */
+.cart-wrap .cart{
+    display: none;
+    width: 328px;
+    border: 1px solid #b5a176;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    position: absolute;
+    top:30px;
+    right: -22px;
+    z-index: 2;
+    background: #fff;
+    padding-top: 15px;
+}
+
+.cart-wrap .cart::before{
+    content: '';
+    display: block;
+    width: 12px;
+    height: 8px;
+    background: url(../images/ico_17.gif);
+    position:absolute;
+    top: -8px;
+    right: 24px;
+}
+
+.cart-wrap .list{
+    height: 244px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-wrap ul{
+    padding-left: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cart-wrap li{
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.cart-wrap .img{
+    float:left;
+}
+
+.cart-wrap img{
+    background: #f4f4f4;
+    width: 55px;
+    height: 60px;
+}
+
+.cart-wrap .message{
+    width: 140px;
+    float:left;
+    padding: 5px 0 5px 10px;
+    font: 12px/25px "微软雅黑";
+}
+
+.cart-wrap .message p:nth-child(1){
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cart-wrap .message p:nth-child(2){
+    color: #b5a176;
+}
+
+.cart-wrap .price{
+    float: left;
+    padding-top: 5px;
+    font: 12px/25px "微软雅黑";
+}
+
+.cart-wrap .close{
+    float: left;
+    width: 26px;
+    font: 16px/25px "微软雅黑";
+    padding-top: 5px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+/* 购物车滚动条 */
+.cart-wrap .scroll-bar{
+    float: right;
+    width: 17px;
+    height: 244px;
+    background: #f1f1f1;
+}
+
+.scroll-bar span{
+    display: block;
+    width: 17px;
+    height: 17px;
+
+}
+
+.scroll-bar .top-btn{
+    background: url(../images/topBtn_bg.gif) 0 0;
+}
+
+.scroll-bar .top-btn:hover{
+    background: url(../images/topBtn_bg.gif) 0 -34px;
+}
+
+.scroll-bar .bottom-btn{
+    background: url(../images/bottomBtn_bg.gif) 0 0;
+}
+
+.scroll-bar .bottom-btn:hover{
+    background: url(../images/bottomBtn_bg.gif) 0 -34px;
+}
+
+.scroll-bar .slide-wrap{
+    height: 210px;
+    position: relative;
+}
+
+.scroll-bar .slide{
+   width:  17px;
+   height: 50px;
+   position: absolute;
+   background: #c1c1c1;
+   top: 0;
+}
+
+.scroll-bar .slide:hover{
+    background: #a9a9a9;
+}
+
+/* 总价部分 */
+.cart-wrap .total{
+    height: 66px;
+    background: #f4f0ea;
+    font: 12px/66px "微软雅黑";
+    text-align: center;
+}
+
+.cart-wrap .total span{
+     color: #c04646;
+}
+
+.cart-wrap .total a{
+    display: inline-block;
+    width: 110px;
+    height: 36px;
+    line-height: 36px;
+    background: #b4a078;
+    color: #fff;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
+/* 导航下拉框样式 */
+.nav .sub-nav{
+    position: absolute;
+    top:50px;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 6px 6px #ececec;
+    padding-bottom: 20px;
+    text-align: center;
+    display: none;
+    /* opacity: 0;
+    transition:all 0.2s linear; */
+}
+
+.nav .sub-nav li{
+    height: auto;
+    text-align: center;
+    margin: 0px 10px;
+    
+}
+
+
+.nav .sub-nav img{
+    display: block;
+    margin: 0 auto 10x auto;
+}
+
+.nav .sub-nav a{
+    font-weight: bold; 
+}
+
+/* 吸顶式(固定)导航 */
+#nav-fix{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+
+#nav-fix .logo{
+    display: block;
+    float: left;
+    margin:13px 40px 0 0;
+}
+
+#nav-fix .nav-bar{
+    float: left;
+}
+
+
+#nav-fix .nav-bar li:nth-last-child(1),
+#nav-fix .nav-bar li:nth-last-child(2),
+#nav-fix .nav-bar li:nth-last-child(3){
+    display: none;
+}
+
+
+#nav-fix .nav-bar li{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+}
+
+#nav-fix .login{
+    display: block;
+    position: absolute;
+    top:0;
+    right: 100px;
+    line-height: 60px;
+}
+
+#nav-fix .login a{
+    margin-left: 20px;
+    color: #b5a176;
+}
+
+
+#nav-fix .cart-wrap{
+    top:20px;
+    right: 50px;
+}
+
+
+/* 面包屑 */
+#position{
+    /* height: 60px; */
+    line-height: 60px;
+    font-size: 12px;
+    color: #999;
+}
+
+#position a:hover{
+    text-decoration: underline;
+    color: #333;
+}
+
+/*----------侧边栏----------*/
+#sideBar{
+	width: 60px;
+	position: fixed;
+	bottom: 20px;
+	right: 1%;
+	text-align: center;
+	background: #fff;
+}
+#sideBar .top{
+	border: 1px solid #ddd;
+	font-size: 12px;
+}
+#sideBar .top a{
+	display: block;
+	padding-top: 30px;
+	margin: 10px 0;
+}
+#sideBar .top a:nth-child(1){
+	background: url(../images/ico_11.gif) top center no-repeat;
+}
+#sideBar .top a:nth-child(2){
+	background: url(../images/ico_12.gif) top center no-repeat;
+}
+#sideBar .top a:nth-child(3){
+	background: url(../images/ico_13.gif) top center no-repeat;
+}
+#sideBar .back{
+	display: block;
+	height: 45px;
+	color: #fff;
+	padding-top: 20px;
+	box-sizing: border-box;
+	background: #999 url(../images/ico_14.gif) center 8px  no-repeat;
+}
+#sideBar .back:hover{
+	background-color: #B4A078;
+}
+
+
