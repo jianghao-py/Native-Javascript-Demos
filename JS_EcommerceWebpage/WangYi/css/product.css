@@ -421,9 +421,9 @@
 }
 
 /* 先隐藏详情 */
-#bottom .details{
+/* #bottom .details{
     display: none;
-}
+} */
 
 /* 评价 */
 #bottom .border{
@@ -548,8 +548,7 @@
 	overflow: hidden;
 	height: 0;
 	opacity: 0;
-	/*opacity: 0;*/
-	/*height: 510px;*/
+	
 }
 
 #bottom .carouselImgCon{
@@ -564,6 +563,8 @@
 	left: 0;
 	width: 2000px;
 }
+
+
 #bottom .carouselImgCon img{
 	width: 584px;
 	height: 438px;
